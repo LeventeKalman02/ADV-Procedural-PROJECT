@@ -176,6 +176,8 @@ void insert() {
 		temp->next = newNode;
 		newNode->next = NULL;
 	}
+
+	printf("Accommodation was successfully added!\n");
 }
 
 struct node* find(int target) {
@@ -278,7 +280,7 @@ void updateAccommodation() {
 			printf("Please enter the duration of the stay:\n\n");
 			scanf("%d", &tmp->stayDuration);
 		}
-		printf("Accommdation was successfully updated!");
+		printf("Accommdation was successfully updated!\n");
 	}
 }
 
@@ -320,6 +322,7 @@ void deleteAccommodation() {
 		previous->next = current->next;
 	}
 
+	printf("accommodation was successfully deleted!\n");
 	return current;
 }
 
@@ -327,7 +330,7 @@ void saveToFile() {
 	FILE* fp;
 
 	struct Node* temp = head;
-	fp = fopen("accommodations.txt", "a");
+	fp = fopen("accommodations.txt", "w");
 
 	if (fp == NULL) {
 		printf("Cannot open file!\n");
